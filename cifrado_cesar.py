@@ -17,6 +17,8 @@ def cifrar(mensaje:str,d:int)->str:
             #     pasos -= LONGITUD_ALFABETO
             pasos = pasos % LONGITUD_ALFABETO
             mensaje_cifrado += ALFABETO[pasos]
+        else:
+            mensaje_cifrado += letra    
     return mensaje_cifrado
 
 def creaCifrador(dist:int)->Callable:
