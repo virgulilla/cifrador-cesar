@@ -1,14 +1,16 @@
 import cifrado_cesar
 
-assert cifrado_cesar.cifrar("zig", 3) == "BLJ"
-assert cifrado_cesar.cifrar("blj", -3) == "ZIG"
+def test_cifrado_simple_con_distancia():
+    assert cifrado_cesar.cifrar("zig", 3) == "BLJ"
+    assert cifrado_cesar.cifrar("blj", -3) == "ZIG"
 
-cifrador2 = cifrado_cesar.creaCifrador(2)
+def test_crea_cifrador():
+    cifrador2 = cifrado_cesar.creaCifrador(2)
+    assert cifrador2("A Z") == "CBA"
 
-assert cifrador2("A Z") == "CBA"
-
-cifra2, descifra2 = cifrado_cesar.creaParCesar(2)
-assert cifra2("A Z") == "CBA"
-assert descifra2("CBA") == "A Z"
+def test_crea_par_cessar():
+    cifra2, descifra2 = cifrado_cesar.creaParCesar(2)
+    assert cifra2("A Z") == "CBA"
+    assert descifra2("CBA") == "A Z"
 
 
